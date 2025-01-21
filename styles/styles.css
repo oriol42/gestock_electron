@@ -1,0 +1,218 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/test2bg.png'); /* Ajoutez le chemin de votre image ici */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Empêcher le défilement de la page */
+}
+
+.container {
+    display: flex;
+    width: 90%; /* Largeur relative */
+    max-width: 800px; /* Largeur maximale */
+    height: 90vh; /* Hauteur relative à la fenêtre */
+    max-height: 500px; /* Hauteur maximale */
+    background-color: transparent; /* Rendre le conteneur légèrement transparent */
+    border-radius: 10px;
+    overflow-y: auto; /* Activer le défilement vertical */
+    box-shadow: 0 4px 10px transparent;
+    margin: 20px; /* Ajouter une marge */
+}
+
+/* Section gauche */
+.left-pane {
+    flex: 1;
+    background-color: rgba(5, 152, 255, 0.9); /* Ajouter une légère transparence */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.left-pane .logo-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.left-pane h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.left-pane p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Section droite */
+.right-pane {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Ajouter une légère transparence */
+    flex-direction: column;
+}
+
+.login-form {
+    text-align: center;
+    width: 100%;
+}
+
+/* Icône groupe d'utilisateurs au-dessus du titre "Connexion" */
+.login-form .form-icon {
+    font-size: 40px;
+    color: #0598ff;
+    margin-bottom: 10px;
+}
+
+.login-form h2 {
+    color: #0598ff;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0598ff;
+    font-size: 16px;
+}
+
+.input-group input {
+    width: 55%; /* Largeur relative */
+    padding: 10px 10px 10px 40px;
+    border: none;
+    border-bottom: 2px solid #0598ff;
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-login, .btn-create-account {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: #0598ff;
+    color: white;
+}
+
+.btn-create-account {
+    background-color: #057aff;
+    color: white;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #0598ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries pour le responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empiler les panneaux verticalement */
+        height: 90vh; /* Hauteur relative à la fenêtre */
+        max-height: none; /* Supprimer la hauteur maximale */
+    }
+
+    .left-pane, .right-pane {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .left-pane {
+        padding-top: 2rem;
+    }
+
+    .left-pane h1 {
+        font-size: 1.5rem;
+    }
+
+    .left-pane p {
+        font-size: 0.9rem;
+    }
+
+    .login-form h2 {
+        font-size: 1.25rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .btn-login, .btn-create-account {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-pane h1 {
+        font-size: 1.25rem;
+    }
+
+    .left-pane p {
+        font-size: 0.8rem;
+    }
+
+    .login-form h2 {
+        font-size: 1rem;
+    }
+
+    .input-group input {
+        font-size: 0.8rem;
+    }
+
+    .btn-login, .btn-create-account {
+        font-size: 0.8rem;
+    }
+
+    .button-group {
+        flex-direction: column; /* Empiler les boutons verticalement */
+        gap: 0.5rem;
+    }
+
+    .btn-login, .btn-create-account {
+        width: 100%; /* Largeur complète */
+    }
+}

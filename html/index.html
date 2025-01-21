@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTOCKS - Connexion</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Inclure Font Awesome -->
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Section gauche -->
+        <div class="left-pane">
+            <!-- <i class="fas fa-users logo-icon"></i>  Icône groupe d'utilisateurs -->
+            <img src="../assets/gestock.png" width="100" height="100">
+            <h1>GESTOCKS</h1>
+            <p>Gestion des stocks, des ventes, rapports, réapprovisionnement</p>
+        </div>
+
+        <!-- Section droite -->
+        <div class="right-pane">
+            <div class="login-form">
+                <!-- Icône groupe d'utilisateurs au-dessus du titre "Connexion" -->
+                <i class="fas fa-user form-icon"></i>
+                <h2>Connexion</h2>
+                <form>
+                    <div class="input-group">
+                        <i class="fas fa-user icon"></i> <!-- Icône utilisateur -->
+                        <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-key icon"></i> <!-- Icône clé -->
+                        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn-login" >Se connecter</button>
+                        <button type="button" class="btn-create-account" id="mybutton">Créer un compte</button>
+                    </div>
+                </form>
+                <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+            </div>
+        </div>
+    </div>
+   <!-- Inclure le fichier JavaScript externe -->
+    <script src="../scripts/login.js"></script>
+</body>
+</html>
