@@ -1,0 +1,24 @@
+{
+  "name": "gestock_electron",
+  "version": "1.0.0",
+  "description": "app de gestion de stock et vente fait  avec electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oriol42/gestock_electron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oriol42/gestock_electron/issues"
+  },
+  "homepage": "https://github.com/oriol42/gestock_electron#readme",
+  "devDependencies": {
+    "electron": "^34.0.1"
+  }
+}
