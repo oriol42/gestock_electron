@@ -1,0 +1,450 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/testbg.png'); /* Ajoutez le chemin de votre image ici */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Empêcher le défilement de la page */
+}
+
+.container {
+    display: flex;
+    width: 120%; /* Largeur relative (90% de la largeur du parent) */
+    max-width: 1200px; /* Largeur maximale (ajustez selon vos besoins) */
+    height: 100vh; /* Hauteur relative (80% de la hauteur de la fenêtre) */
+    max-height: 600px; /* Hauteur maximale (ajustez selon vos besoins) */
+    background-color: transparent; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    margin: 20px; /* Marge extérieure */
+}
+
+.left-pane {
+    width: 200px; /* Largeur fixe */
+    background-color: rgba(5, 152, 255, 0.9); /* Fond bleu avec transparence */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligner les éléments en haut */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 0 0 10px; /* Coins arrondis à gauche */
+    overflow-y: auto; /* Activer le défilement vertical si le contenu dépasse */
+    overflow-x: auto; /* Activer le défilement horizontal si le contenu dépasse */
+}
+
+.right-pane {
+    flex: 1;
+    width: calc(100% - 200px); /* Largeur restante */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc avec transparence */
+    border-radius: 0 10px 10px 0; /* Coins arrondis à droite */
+    flex-direction: column;
+    overflow-y: auto; /* Activer le défilement vertical si le contenu dépasse */
+    overflow-x: auto; /* Activer le défilement horizontal si le contenu dépasse */
+}
+
+/* Styles pour les boutons dans le left-pane */
+.menu-button {
+    width: 100%; /* Largeur complète */
+    padding: 12px 20px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Marge entre les boutons */
+    background-color: rgba(255, 255, 255, 0.1); /* Fond transparent */
+    color: white; /* Texte blanc */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure légère */
+    border-radius: 25px; /* Coins plus arrondis */
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en forme de main */
+    text-align: left; /* Alignement du texte à gauche */
+    transition: all 0.3s ease; /* Transition fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond plus clair au survol */
+    transform: translateY(-2px); /* Légère élévation */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+.menu-button:active {
+    transform: translateY(0); /* Réinitialiser l'élévation au clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Styles pour les icônes dans les boutons */
+.menu-button i {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+}
+
+/* Styles pour le contenu de la right-pane */
+.right-pane h1 {
+    
+    margin-bottom: 20px; /* Marge sous le titre */
+    color: #333; /* Couleur du texte */
+}
+
+.right-pane p {
+    color: #555; /* Couleur du texte */
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+#add-stock-form:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+}
+
+#add-stock-form h2 {
+    color: #0598ff; /* Couleur bleue pour le titre */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#add-stock-form .input-group {
+    margin-bottom: 20px;
+}
+
+#add-stock-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Couleur du texte */
+    font-weight: 600; /* Texte en gras */
+    font-size: 14px;
+}
+
+#add-stock-form input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond légèrement blanc pour les champs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Effets de transition */
+}
+
+#add-stock-form input:focus {
+    border-color: #0598ff; /* Bordure bleue au focus */
+    box-shadow: 0 0 8px rgba(5, 152, 255, 0.3); /* Ombre bleue au focus */
+}
+
+#add-stock-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0598ff; /* Fond bleu */
+    color: white; /* Texte blanc */
+    border: none;
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Effets de transition */
+}
+
+#add-stock-form button:hover {
+    background-color: #0480d6; /* Fond bleu plus foncé au survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+#add-stock-form button:active {
+    transform: translateY(0); /* Réinitialiser l'élévation au clic */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    border-color: #0598ff;
+    box-shadow: 0 0 8px rgba(5, 152, 255, 0.3);
+}
+
+/* Styles pour la liste des stocks */
+#stock-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+}
+
+#stock-list li {
+
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Texte sombre */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: all 0.3s ease; /* Transition fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#stock-list li:hover {
+    background-color: rgba(5, 152, 255, 0.1); /* Fond bleu très léger au survol */
+    transform: translateY(-2px); /* Légère élévation */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+#stock-list li:active {
+    transform: translateY(0); /* Réinitialiser l'élévation au clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Styles pour les détails du stock */
+#stock-details-content {
+    width: 100%;
+    overflow-x: auto; /* Défilement horizontal si nécessaire */
+}
+
+#stock-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#stock-details-table th,
+#stock-details-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#stock-details-table th {
+    background-color: #f4f4f4; /* Fond gris pour l'en-tête */
+}
+
+/* Styles pour la page des détails du stock */
+.stock-details-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+#stock-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#stock-details-table th,
+#stock-details-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#stock-details-table th {
+    background-color: #f4f4f4;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0598ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0480d6;
+}
+/* Styles pour les boutons d'actions */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    background-color: #0598ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #0480d6;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modal .input-group {
+    margin-bottom: 15px;
+}
+
+.modal .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal .input-group input,
+.modal .input-group textarea,
+.modal .input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .btn-save {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal .btn-cancel {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Liste des stocks */
+#stock-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+    margin-top: 20px;
+}
+
+/* Style des boutons de la liste des stocks */
+.stock-button {
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white; /* Texte en blanc */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* Effet au survol des boutons */
+.stock-button:hover {
+    background-color: #45a049; /* Couleur légèrement plus foncée */
+    transform: scale(1.05); /* Agrandir légèrement le bouton */
+}
+
+/* Effet de focus (quand le bouton est sélectionné) */
+.stock-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5); /* Ombre autour du bouton */
+}
+
+/* Style pour un bouton désactivé */
+.stock-button:disabled {
+    background-color: #ddd; /* Couleur de fond grise */
+    color: #888; /* Texte gris */
+    cursor: not-allowed;
+}
+
+/* Style pour les boutons dans une petite vue */
+@media (max-width: 768px) {
+    .stock-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        min-width: 120px;
+    }
+}
+
+
+
+#search-bar {
+    width: 50%;
+    padding: 10px 5px; /* Espacement interne (haut/bas : 10px, gauche/droite : 5px) */
+    border: none; /* Retirer toutes les bordures */
+    border-bottom: 2px solid #007BFF; /* Ligne bleue en bas */
+    font-size: 16px; /* Taille de la police */
+    outline: none; /* Retirer le contour par défaut */
+    transition: border-bottom-color 0.3s ease; /* Animation de la couleur */
+    background-color: transparent;
+}
+
+#search-bar:focus {
+    border-bottom-color: #0056b3; /* Couleur plus foncée au focus */
+}
+

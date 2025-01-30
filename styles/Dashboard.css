@@ -1,0 +1,310 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f7fa;
+    color: #333;
+    padding: 20px;
+}
+
+/* En-tête */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a5f; /* Bleu foncé moderne */
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Blanc */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #4A90E2; /* Bleu clair au survol */
+}
+
+header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff; /* Blanc */
+    transition: color 0.3s;
+}
+
+header .search-icon:hover {
+    color: #4A90E2; /* Bleu clair au survol */
+}
+
+header .alert-icon {
+    position: relative;
+    cursor: pointer;
+    color: #ffffff; /* Blanc */
+}
+
+header .alert-icon .alert-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #FF6B6B; /* Rouge pour les alertes */
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+header .profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff; /* Blanc */
+}
+
+/* Sections */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Grille de KPI */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cartes KPI */
+.kpi-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.kpi-icon {
+    font-size: 32px;
+    color: #4A90E2;
+}
+
+.kpi-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kpi-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.kpi-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 8px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.kpi-card.financial .progress {
+    background-color: #4A90E2; /* Bleu */
+}
+
+.kpi-card.stock .progress {
+    background-color: #FF6B6B; /* Rouge */
+}
+
+.kpi-card.sales .progress {
+    background-color: #32CD32; /* Vert */
+}
+
+.kpi-card.clients .progress {
+    background-color: #FFA500; /* Orange */
+}
+
+.kpi-card.returns .progress {
+    background-color: #FF6B6B; /* Rouge */
+}
+
+.kpi-trend {
+    font-size: 12px;
+    color: #4CAF50; /* Vert pour les tendances positives */
+}
+
+.kpi-trend i {
+    margin-right: 4px;
+}
+
+/* Graphiques */
+.chart-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+/* Tableaux */
+.stock-alerts-section, .top-products-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f5f5f5;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.alert {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.status.warning {
+    background-color: #FFA500;
+    color: white;
+}
+
+.action-btn {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #357ABD;
+}
+
+/* Modal d'alerte */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}

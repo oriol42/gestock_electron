@@ -1,0 +1,41 @@
+<!-- table.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Stock</title>
+    <link rel="stylesheet" href="../styles/stocks.css">
+</head>
+<body>
+    <div id="table-container">
+        <h2 id="stock-details-title">Détails du Stock</h2>
+
+        <!-- Boutons d'actions -->
+        <div class="action-buttons">
+            <button id="back-button" class="btn-login">Retour</button>
+            <button id="add-product-button" class="btn-login">Ajouter un produit</button>
+            <button id="delete-product-button" class="btn-login">Supprimer un produit</button>
+        </div>
+
+        <!-- Tableau des produits -->
+        <table id="stock-details-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Prix d'achat</th>
+                    <th>Date d'ajout</th>
+                    <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront ajoutées dynamiquement par JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="../scripts/stocks.js"></script>
+</body>
+</html>

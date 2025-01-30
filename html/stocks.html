@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Stocks</title>
+    <link rel="stylesheet" href="../styles/stocks.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panneau de gauche pour les boutons de menu -->
+        <div class="left-pane">
+            <button class="menu-button">
+                <i class="fas fa-boxes"></i> Consulter un stock
+            </button>
+            <button class="menu-button">
+                <i class="fas fa-plus"></i> Ajouter un stock
+            </button>
+            <button class="menu-button">
+                <i class="fas fa-edit"></i> Modifier un stock
+            </button>
+            <button class="menu-button">
+                <i class="fas fa-trash" id="delete-stock-button"></i> Supprimer un stock
+            </button>
+            <button class="menu-button">
+                <i class="fas fa-arrow-circle-up"></i> Ravitailler un stock
+            </button>
+            <button class="menu-button">
+                <i class="fas fa-history"></i> Historique des mouvements
+            </button>
+        </div>
+
+        <!-- Panneau de droite pour le contenu -->
+        <div class="right-pane">
+            <!-- Contenu initial -->
+            <div id="initial-content">
+                <h1 id="stock-title">Gestion des Stocks</h1>
+                <p>Sélectionnez une action dans le menu de gauche.</p>
+            </div>
+
+            <!-- Formulaire pour ajouter un stock (masqué par défaut) -->
+            <form id="add-stock-form" class="hidden">
+                <h2>Ajouter un stock</h2>
+                <div class="input-group">
+                    <label for="stock-name">Nom du stock :</label>
+                    <input type="text" id="stock-name" name="stock-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="stock-threshold">Seuil de réapprovisionnement :</label>
+                    <input type="number" id="stock-threshold" name="stock-threshold" required>
+                </div>
+                <div class="input-group">
+                    <label for="stock-description">Description du stock :</label>
+                    <textarea id="stock-description" name="stock-description" rows="10" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="stock-category">Catégorie du stock :</label>
+                    <select id="stock-category" name="stock-category">
+                        <option value="Stock de réapprovisionnement">Ravitailleur</option>
+                        <option value="Stock standard">Stock standard</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-login">Ajouter</button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="../scripts/stocks.js"></script>
+</body>
+</html>

@@ -131,6 +131,29 @@ body {
     color: white;
 }
 
+.btn-login:hover {
+    background-color: #0598ff;
+    transform: translateY(-2px); /* Légère élévation */;
+    box-shadow: 0 6px 12px #0598ff;
+}
+
+.btn-create-account:hover {
+    background-color: #0598ff;
+    transform: translateY(-2px); /* Légère élévation */;
+    box-shadow: 0 6px 12px #0598ff;
+}
+
+.btn-login:active {
+    transform: translateY(0); /* Réinitialiser l'élévation au clic */
+    box-shadow: 0 4px 6px #0598ff;
+}
+
+.btn-create-account:active {
+    transform: translateY(0); /* Réinitialiser l'élévation au clic */
+    box-shadow: 0 4px 6px #0598ff;
+}
+
+
 .btn-create-account {
     background-color: #057aff;
     color: white;

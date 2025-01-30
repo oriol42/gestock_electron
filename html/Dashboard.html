@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Gestion</title>
+    <link rel="stylesheet" href="../styles/Dashboard.css">
+    <link href="../css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="logo">Gestocks</div>
+        <nav>
+            <ul>
+                <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="stocks.html"><i class="fas fa-box"></i> Stocks</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Ventes</a></li>
+                <li><a href="Products.html"><i class="fas fa-cubes"></i> Produits</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Rapports</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="alert-icon" onclick="openAlertModal()">
+                <i class="fas fa-bell"></i>
+                <span class="alert-count">2</span>
+            </div>
+            <div class="profile-icon">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1 : Indicateurs clés (KPI) -->
+    <section class="kpi-section">
+        <h2>Indicateurs Clés</h2>
+        <div class="kpi-grid">
+            <!-- KPI Financiers -->
+            <div class="kpi-card financial">
+                <i class="fas fa-coins kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">12 000 Fcfa</span>
+                    <span class="kpi-label">Chiffre d'affaire du jour</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +8% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card financial">
+                <i class="fas fa-percent kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">25 %</span>
+                    <span class="kpi-label">Marge bénéficiaire</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +2% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card financial">
+                <i class="fas fa-shopping-cart kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">500 Fcfa</span>
+                    <span class="kpi-label">Panier moyen</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +5% par rapport a hier</span>
+                </div>
+            </div>
+
+            <!-- KPI Stock -->
+            <div class="kpi-card stock">
+                <i class="fas fa-boxes kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">1 200</span>
+                    <span class="kpi-label">Produits en stock</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-down"></i> -5% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card stock">
+                <i class="fas fa-clock kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">30 jours</span>
+                    <span class="kpi-label">Rotation des stocks</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-minus"></i> Stable</span>
+                </div>
+            </div>
+            <div class="kpi-card stock">
+                <i class="fas fa-exclamation-triangle kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">5</span>
+                    <span class="kpi-label">Produits en alerte</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-down"></i> -2 par rapport a hier</span>
+                </div>
+            </div>
+
+            <!-- KPI Ventes -->
+            <div class="kpi-card sales">
+                <i class="fas fa-shopping-cart kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">120</span>
+                    <span class="kpi-label">Transactions</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +15% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card sales">
+                <i class="fas fa-percentage kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">20 %</span>
+                    <span class="kpi-label">Taux de conversion</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +3% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card sales">
+                <i class="fas fa-trophy kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">Produit A</span>
+                    <span class="kpi-label">Top produit</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +10% par rapport a hier</span>
+                </div>
+            </div>
+
+            <!-- KPI Clients -->
+            <div class="kpi-card clients">
+                <i class="fas fa-user-plus kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">15</span>
+                    <span class="kpi-label">Nouveaux clients</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +5% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card clients">
+                <i class="fas fa-user-check kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">80 %</span>
+                    <span class="kpi-label">Taux de fidélisation</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-up"></i> +2% par rapport a hier</span>
+                </div>
+            </div>
+            <div class="kpi-card returns">
+                <i class="fas fa-undo kpi-icon"></i>
+                <div class="kpi-content">
+                    <span class="kpi-value">5 %</span>
+                    <span class="kpi-label">Taux de retour</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 5%;"></div>
+                    </div>
+                    <span class="kpi-trend"><i class="fas fa-arrow-down"></i> -1% par rapport a hier</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 : Graphiques -->
+    <section class="chart-section">
+        <h2>Graphiques</h2>
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h3>Ventes Hebdomadaires</h3>
+                <canvas id="weeklySalesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Stocks par Catégorie</h3>
+                <canvas id="stockByCategoryChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 : Liste des produits en rupture de stock ou en stock critique -->
+    <section class="stock-alerts-section">
+        <h2>Produits en Alerte</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Statut</th>
+                    <th>Stock Restant</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produit A</td>
+                    <td><span class="status alert">Rupture de stock</span></td>
+                    <td>0 unités</td>
+                    <td><button class="action-btn">Commander</button></td>
+                </tr>
+                <tr>
+                    <td>Produit B</td>
+                    <td><span class="status warning">Stock critique</span></td>
+                    <td>2 unités</td>
+                    <td><button class="action-btn">Commander</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Section 4 : Top 5 des produits les plus vendus -->
+    <section class="top-products-section">
+        <h2>Top 5 des Produits</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité Vendue</th>
+                    <th>Chiffre d'Affaires</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produit A</td>
+                    <td>150 unités</td>
+                    <td>7 500 Fcfa</td>
+                </tr>
+                <tr>
+                    <td>Produit B</td>
+                    <td>120 unités</td>
+                    <td>6 000 Fcfa</td>
+                </tr>
+                <tr>
+                    <td>Produit C</td>
+                    <td>90 unités</td>
+                    <td>4 500 Fcfa</td>
+                </tr>
+                <tr>
+                    <td>Produit D</td>
+                    <td>80 unités</td>
+                    <td>4 000 Fcfa</td>
+                </tr>
+                <tr>
+                    <td>Produit E</td>
+                    <td>70 unités</td>
+                    <td>3 500 Fcfa</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Modal d'alerte -->
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAlertModal()">&times;</span>
+            <h2>Alertes</h2>
+            <ul>
+                <li>Produit A - Stock critique : 2 unités restantes</li>
+                <li>Commande #123 - Retard de 2 jours</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../renderer/Dashboard.js"></script>
+</body>
+</html>

@@ -49,23 +49,23 @@ registrationForm.addEventListener('submit', async (event) => {
     }
 
     try {
-        // Hacher le mot de passe
-        const hash = await bcrypt.hash(password, saltRounds);
-        console.log('Mot de passe haché :', hash);
-
-        // Vérifier que le nom d'utilisateur est unique
-        const row = await new Promise((resolve, reject) => {
-            db.get("SELECT * FROM accounts WHERE username = ?", [username], (err, row) => {
+        // Vérifier le nombre d'enregistrements dans la table
+        const count = await new Promise((resolve, reject) => {
+            db.get("SELECT COUNT(*) AS total FROM accounts", (err, row) => {
                 if (err) reject(err);
-                else resolve(row);
+                else resolve(row.total);
             });
         });
 
-        if (row) {
-            console.log('Nom d\'utilisateur déjà utilisé :', username);
-            alert('Ce nom d\'utilisateur est déjà utilisé.');
-            return;
+        if (count > 0) {
+            console.log('Un compte existe déjà.');
+            alert('Enregistrement impossible : Un compte existe déjà.');
+            return; // Arrêter l'exécution si un compte existe déjà
         }
+
+        // Hacher le mot de passe
+        const hash = await bcrypt.hash(password, saltRounds);
+        console.log('Mot de passe haché :', hash);
 
         // Insérer les données dans la base de données
         await new Promise((resolve, reject) => {
@@ -84,7 +84,7 @@ registrationForm.addEventListener('submit', async (event) => {
         // Réinitialiser le formulaire
         registrationForm.reset();
         // Rediriger vers la page de connexion
-        window.open("index.html", "_self");
+        window.open("login.html", "_self");
     } catch (error) {
         console.error('Erreur lors de la création du compte :', error);
         alert('Erreur : Impossible de créer le compte. Veuillez réessayer.');
@@ -93,5 +93,5 @@ registrationForm.addEventListener('submit', async (event) => {
 
 // Gérer le clic sur le bouton "Retour"
 backbutton.addEventListener("click", () => {
-    window.open("index.html", "_self"); // Rediriger vers la page de connexion
+    window.open("login.html", "_self"); // Rediriger vers la page de connexion
 });
