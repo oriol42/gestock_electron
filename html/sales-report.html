@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport des Ventes - Gestocks</title>
+  <link rel="stylesheet" href="../styles/report.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Gestocks</div>
+    <nav>
+        <ul>
+            <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="stocks.html"><i class="fas fa-box"></i> Stocks</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Ventes</a></li>
+            <li><a href="#"><i class="fas fas fa-user"></i> Client</a></li>
+            <li><a href="Products.html"><i class="fas fa-cubes"></i> Produits</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+            <li><a href="report.html"><i class="fas fa-file-alt"></i> Rapports</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Rapports</h3>
+      <ul class="sidebar-menu">
+        <li><a href="general-report.html" class="menu-item"><i class="fas fa-chart-pie"></i> Rapport Généraux</a></li>
+        <li><a href="stock-report.html" class="menu-item"><i class="fas fa-warehouse"></i> Rapport des Stocks</a></li>
+        <li><a href="sales-report.html" class="menu-item active"><i class="fas fa-shopping-cart"></i> Rapport des Ventes</a></li>
+        <li><a href="financial-report.html" class="menu-item"><i class="fas fa-money-bill-wave"></i> Rapport Financier</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <h2>Rapport des Ventes</h2>
+      
+      <!-- Bouton d'export -->
+      <div class="export-button">
+        <button>Exporter</button>
+      </div>
+
+      <!-- KPI - Chiffre d'Affaires et Marge Bénéficiaire -->
+      <section class="kpi">
+        <div class="kpi-item">
+          <h3>Chiffre d'Affaires</h3>
+          <p>€50,000</p>
+        </div>
+        <div class="kpi-item">
+          <h3>Marge Bénéficiaire</h3>
+          <p>30%</p>
+        </div>
+        <div class="kpi-item">
+          <h3>Top Produit</h3>
+          <p>Produit A</p>
+        </div>
+      </section>
+
+      <!-- Détails des ventes -->
+      <section class="sales-details">
+        <h3>Détails des Ventes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>Quantité Vendue</th>
+              <th>Chiffre d'Affaires</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Produit A</td>
+              <td>150</td>
+              <td>€1500</td>
+            </tr>
+            <tr>
+              <td>Produit B</td>
+              <td>200</td>
+              <td>€2000</td>
+            </tr>
+            <tr>
+              <td>Produit C</td>
+              <td>300</td>
+              <td>€3000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

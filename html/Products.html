@@ -3,142 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestion des Produits</title>
+  <title>Gestion des Produits - Gestocks</title>
   <link rel="stylesheet" href="../styles/Products.css">
-  <!-- Ajouter une police Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- En-tête de navigation -->
+  <header>
+    <div class="logo">Gestocks</div>
+    <nav>
+      <ul>
+        <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="stocks.html"><i class="fas fa-box"></i> Stocks</a></li>
+        <li><a href="#"><i class="fas fa-chart-line"></i> Ventes</a></li>
+        <li><a href="#"><i class="fas fas fa-user"></i> Client</a></li>
+        <li><a href="Products.html"><i class="fas fa-cubes"></i> Produits</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+        <li><a href="report.html"><i class="fas fa-file-alt"></i> Rapports</a></li>
+    </ul>
+    </nav>
+  </header>
+
   <div class="container">
-    <!-- En-tête -->
-    <header>
-      <!-- Navigation -->
-      <nav>
-        <ul>
-          <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-          <li><a href="#"><i class="fas fa-box"></i> Stocks</a></li>
-          <li><a href="#"><i class="fas fa-chart-line"></i> Ventes</a></li>
-          <li><a href="Products.html"><i class="fas fa-cubes"></i> Produits</a></li>
-          <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
-          <li><a href="#"><i class="fas fa-file-alt"></i> Rapports</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Barre de recherche et filtres -->
-    <div class="search-filters">
-      <input type="text" id="searchInput" placeholder="Rechercher par nom, référence ou catégorie...">
-      <select id="categoryFilter">
-        <option value="">Toutes les catégories</option>
-        <option value="Electronique">Electronique</option>
-        <option value="Vêtements">Vêtements</option>
-        <option value="Alimentation">Alimentation</option>
-      </select>
-      <select id="stockFilter">
-        <option value="">Tous les statuts</option>
-        <option value="in_stock">En stock</option>
-        <option value="low_stock">Stock faible</option>
-        <option value="out_of_stock">Rupture de stock</option>
-      </select>
-    </div>
-
-    <!-- Bouton "Ajouter un produit" -->
-    <div class="add-product-section">
-      <button id="addProductBtn" class="btn-primary">Ajouter un produit</button>
-    </div>
-
-    <!-- Tableau des produits -->
-    <table id="productTable">
-      <thead>
-        <tr>
-          <th>Nom du produit</th>
-          <th>Référence</th>
-          <th>Prix</th>
-          <th>Quantité en stock</th>
-          <th>Catégorie</th>
-          <th>Fournisseur</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Les lignes seront ajoutées dynamiquement par JavaScript -->
-      </tbody>
-    </table>
-
-    <!-- Pagination -->
-    <div class="pagination">
-      <button id="prevPage" class="btn-secondary">Précédent</button>
-      <span id="pageInfo">Page 1 sur 1</span>
-      <button id="nextPage" class="btn-secondary">Suivant</button>
-    </div>
-
-    <!-- Formulaire modal pour ajouter/modifier un produit -->
-    <div id="productFormModal" class="modal">
-      <div class="modal-content">
-        <h2 id="modalTitle">Ajouter un produit</h2>
-        <form id="productForm">
-          <div class="form-group">
-            <label for="productName">Nom du produit *</label>
-            <input type="text" id="productName" required>
-          </div>
-          <div class="form-group">
-            <label for="productReference">Référence *</label>
-            <input type="text" id="productReference" required>
-          </div>
-          <div class="form-group">
-            <label for="productPrice">Prix *</label>
-            <input type="number" id="productPrice" min="0" required>
-          </div>
-          <div class="form-group">
-            <label for="productQuantity">Quantité en stock *</label>
-            <input type="number" id="productQuantity" min="0" required>
-          </div>
-          <div class="form-group">
-            <label for="productCategory">Catégorie *</label>
-            <select id="productCategory" required>
-              <option value="Electronique">Electronique</option>
-              <option value="Vêtements">Vêtements</option>
-              <option value="Alimentation">Alimentation</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="productDescription">Description</label>
-            <textarea id="productDescription"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="productImage">Image du produit</label>
-            <input type="file" id="productImage">
-          </div>
-          <div class="form-buttons">
-            <button type="submit" class="btn-primary">Enregistrer</button>
-            <button type="button" id="cancelBtn" class="btn-secondary">Annuler</button>
-          </div>
-        </form>
+    <!-- Barre latérale -->
+    <aside class="sidebar">
+      <div class="sidebar-buttons">
+        <button class="btn-primary" id="addProductBtn"><i class="fas fa-plus"></i> Ajouter un produit</button>
+        <button class="btn-primary" id="importProductBtn"><i class="fas fa-file-import"></i> Importer des produits</button>
       </div>
-    </div>
+    </aside>
 
-    <!-- Section des statistiques -->
-    <div class="stats">
-      <div class="stat-card">
-        <h3>Total des produits</h3>
-        <p id="totalProducts">0</p>
+    <!-- Contenu principal -->
+    <div class="main-content">
+      <!-- Barre de recherche et filtres -->
+      <div class="search-filters">
+        <input type="text" id="searchInput" placeholder="Rechercher par nom, référence ou catégorie...">
+        <select id="categoryFilter">
+          <option value="">Toutes les catégories</option>
+          <option value="Electronique">Electronique</option>
+          <option value="Vêtements">Vêtements</option>
+          <option value="Alimentation">Alimentation</option>
+        </select>
+        <select id="stockFilter">
+          <option value="">Tous les statuts</option>
+          <option value="in_stock">En stock</option>
+          <option value="low_stock">Stock faible</option>
+          <option value="out_of_stock">Rupture de stock</option>
+        </select>
       </div>
-      <div class="stat-card">
-        <h3>Produits en rupture</h3>
-        <p id="outOfStockProducts">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>Produits en stock faible</h3>
-        <p id="lowStockProducts">0</p>
-      </div>
-    </div>
 
-    <!-- Notifications -->
-    <div id="notification" class="notification">
-      <p id="notificationMessage"></p>
+      <!-- Tableau des produits -->
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Nom du produit</th>
+            <th>Référence</th>
+            <th>Prix</th>
+            <th>Quantité en stock</th>
+            <th>Catégorie</th>
+            <th>Fournisseur</th>
+            <th>Description</th> <!-- Ajout de la description -->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <!-- Les lignes seront ajoutées dynamiquement par JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button id="prevPage" class="btn-secondary">Précédent</button>
+        <span id="pageInfo">Page 1 sur 1</span>
+        <button id="nextPage" class="btn-secondary">Suivant</button>
+      </div>
     </div>
   </div>
 
-  <script src="../renderer/Products.js"></script>
+  <script src="../scripts/Products.js"></script>
 </body>
 </html>

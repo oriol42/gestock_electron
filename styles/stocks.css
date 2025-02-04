@@ -12,18 +12,62 @@ body {
     overflow: hidden; /* Empêcher le défilement de la page */
 }
 
+/* En-tête */
+header {
+    display: flex;
+    justify-content: center; /* Centrer la navbar */
+    align-items: center;
+    background-color: #1e3a5f; /* Couleur de fond de la navbar */
+    padding: 15px 30px;
+    color: white;
+    position: fixed; /* Fixer la navbar en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* S'assurer que la navbar est au-dessus des autres éléments */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 100px; /* Ajuste cette valeur selon tes besoins */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacement entre les éléments du menu */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #34495e;
+}
+
+  
+
+/* Conteneur principal */
 .container {
     display: flex;
-    width: 120%; /* Largeur relative (90% de la largeur du parent) */
-    max-width: 1200px; /* Largeur maximale (ajustez selon vos besoins) */
-    height: 100vh; /* Hauteur relative (80% de la hauteur de la fenêtre) */
-    max-height: 600px; /* Hauteur maximale (ajustez selon vos besoins) */
+    width: 90%; /* Largeur relative */
+    max-width: 1200px; /* Largeur maximale */
+    height: calc(100vh - 80px); /* Hauteur ajustée pour la navbar */
+    margin: 80px auto 20px; /* Marge pour éviter que le contenu ne soit caché sous la navbar */
     background-color: transparent; /* Couleur de fond */
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
-    margin: 20px; /* Marge extérieure */
+    
 }
-
 .left-pane {
     width: 200px; /* Largeur fixe */
     background-color: rgba(5, 152, 255, 0.9); /* Fond bleu avec transparence */
