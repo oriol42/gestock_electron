@@ -1,72 +1,70 @@
 /* Style général */
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* En-tête */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a5f;
+    padding: 15px 30px;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #34495e;
+  }
+  
+  /* Structure principale */
+  .container {
+    display: flex;
+    flex: 1;
+  }
 
-/* En-tête */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1e3a5f;
-  padding: 15px 30px;
-  color: white;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  background-color: #34495e;
-}
-
-/* Structure principale */
-.container {
-  display: flex;
-  flex: 1;
-}
 /* Barre latérale */
 .sidebar {
     width: 220px;
-    background-color: #f0f2f5; /* Couleur de fond claire pour la sidebar, comme dans Products.css */
+    background-color: #f0f2f5; /* Couleur de fond claire pour la sidebar */
     color: #333; /* Texte sombre pour contraster */
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Fixe la sidebar pour éviter de chevaucher le contenu */
-    top: 60px; /* Pour éviter de chevaucher l'en-tête */
-    bottom: 0;
-    z-index: 1; /* Pour qu'elle reste en arrière-plan par rapport au contenu */
 }
 
+/* Boutons de la sidebar */
 .sidebar-buttons {
     display: flex;
     flex-direction: column;
@@ -98,27 +96,26 @@ nav ul li a.active {
     transition: margin-left 0.3s; /* Effet de transition lors de l'ouverture/fermeture de la sidebar */
 }
 
-/* Formulaire d'ajout de stock */
-#add-stock-form {
+/* Formulaire d'ajout de vente */
+#add-sale-form {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-#add-stock-form .input-group {
+#add-sale-form .input-group {
     margin-bottom: 15px;
 }
 
-#add-stock-form label {
+#add-sale-form label {
     display: block;
     margin-bottom: 5px;
     font-size: 1rem;
 }
 
-#add-stock-form input,
-#add-stock-form select,
-#add-stock-form textarea {
+#add-sale-form input,
+#add-sale-form select {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -126,7 +123,7 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-#add-stock-form button {
+#add-sale-form button {
     width: 100%;
     padding: 12px;
     background-color: #007bff; /* Bleu */
@@ -136,7 +133,7 @@ nav ul li a.active {
     cursor: pointer;
 }
 
-#add-stock-form button:hover {
+#add-sale-form button:hover {
     background-color: #0056b3; /* Bleu foncé */
 }
 

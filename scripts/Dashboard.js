@@ -52,4 +52,4 @@ function closeAlertModal() {
 }
 
 // Ouvrir le modal d'alerte automatiquement au chargement de la page
-window.onload = openAlertModal;
+/*window.onload = openAlertModal;*/

@@ -5,57 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Stocks</title>
     <link rel="stylesheet" href="../styles/stocks.css">
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- En-tête -->
+    <!-- En-tête de navigation -->
     <header>
         <div class="logo">Gestocks</div>
         <nav>
             <ul>
                 <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li><a href="stocks.html"><i class="fas fa-box"></i> Stocks</a></li>
-                <li><a href="#"><i class="fas fa-chart-line"></i> Ventes</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Client</a></li>
+                <li><a href="sales.html"><i class="fas fa-chart-line"></i> Ventes</a></li>
+                <li><a href="clients.html"><i class="fas fas fa-user"></i> Client</a></li>
                 <li><a href="Products.html"><i class="fas fa-cubes"></i> Produits</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
                 <li><a href="report.html"><i class="fas fa-file-alt"></i> Rapports</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <!-- Panneau de gauche pour les boutons de menu -->
-        <div class="left-pane">
-            <button class="menu-button">
-                <i class="fas fa-boxes"></i> Consulter un stock
-            </button>
-            <button class="menu-button">
-                <i class="fas fa-plus"></i> Ajouter un stock
-            </button>
-            <button class="menu-button">
-                <i class="fas fa-edit"></i> Modifier un stock
-            </button>
-            <button class="menu-button">
-                <i class="fas fa-trash" id="delete-stock-button"></i> Supprimer un stock
-            </button>
-            <button class="menu-button">
-                <i class="fas fa-arrow-circle-up"></i> Ravitailler un stock
-            </button>
-            <button class="menu-button">
-                <i class="fas fa-history"></i> Historique des mouvements
-            </button>
-        </div>
+        <!-- Barre latérale -->
+        <aside class="sidebar">
+            <button class="btn-primary"><i class="fas fa-boxes"></i> Consulter un stock</button>
+            <button class="btn-primary"><i class="fas fa-plus"></i> Ajouter un stock</button>
+            <button class="btn-primary"><i class="fas fa-edit"></i> Modifier un stock</button>
+            <button class="btn-primary"><i class="fas fa-trash"></i> Supprimer un stock</button>
+            <button class="btn-primary"><i class="fas fa-arrow-circle-up"></i> Ravitailler un stock</button>
+            <button class="btn-primary"><i class="fas fa-history"></i> Historique des mouvements</button>
+        </aside>
 
-        <!-- Panneau de droite pour le contenu -->
-        <div class="right-pane">
+        <!-- Contenu principal -->
+        <div class="main-content">
             <!-- Contenu initial -->
             <div id="initial-content">
-                <h1 id="stock-title">Gestion des Stocks</h1>
+                <h1>Gestion des Stocks</h1>
                 <p>Sélectionnez une action dans le menu de gauche.</p>
             </div>
 
-            <!-- Formulaire pour ajouter un stock (masqué par défaut) -->
+            <!-- Formulaire pour ajouter un stock -->
             <form id="add-stock-form" class="hidden">
                 <h2>Ajouter un stock</h2>
                 <div class="input-group">
@@ -68,7 +56,7 @@
                 </div>
                 <div class="input-group">
                     <label for="stock-description">Description du stock :</label>
-                    <textarea id="stock-description" name="stock-description" rows="10" required></textarea>
+                    <textarea id="stock-description" name="stock-description" rows="4" required></textarea>
                 </div>
                 <div class="input-group">
                     <label for="stock-category">Catégorie du stock :</label>
@@ -77,12 +65,11 @@
                         <option value="Stock standard">Stock standard</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-login">Ajouter</button>
+                <button type="submit" class="btn-submit">Ajouter</button>
             </form>
         </div>
     </div>
 
-    <!-- Scripts JavaScript -->
     <script src="../scripts/stocks.js"></script>
 </body>
 </html>
